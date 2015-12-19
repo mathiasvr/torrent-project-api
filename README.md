@@ -14,17 +14,17 @@ var tp = require('torrent-project-api')
 
 tp.search('ubuntu', function (err, result) {
   if (err) return console.error(err)
-  
+
   console.log('Found ' + result.torrents.length + ' torrents out of ' + result.total + ' results.')
-  
-	console.log('The top result was: ' + result.torrents[0].title)
-  
+
+  console.log('The top result was: ' + result.torrents[0].title)
+
   tp.magnet(result.torrents[0], function (err, link) {
     if (err) return console.error(err)
     console.log('Here is a magnet link it:')
     console.log(link)
   })
-}) 
+})
 ```
 
 The `result` object looks like this:
@@ -38,7 +38,7 @@ The `result` object looks like this:
        leechs: 59,
        size: 1054867456,
        hash: '743bc6fad39e3a35460d31af5322c131dd196ac2' },
-    { ... } 
+    { ... }
   ]
 }
 ```
