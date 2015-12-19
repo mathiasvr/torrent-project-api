@@ -56,7 +56,7 @@ torrentProject.magnet = function (torrent, callback) {
 
 // note: this function is based on many assumptions.
 function _normalize (json, limit) {
-  var result = { torrents: [], total: parseInt(json['total_found'], 10) }
+  var result = { total: parseInt(json['total_found'], 10), torrents: [] }
 
   // skip total_found key, or limit further
   var count = Math.min(Object.keys(json).length - 1, limit || 200)
