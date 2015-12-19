@@ -1,5 +1,5 @@
 # Torrent Project API
-Torrent search API for torrentproject.se
+Torrent search API for [torrentproject.se](https://torrentproject.se)
 
 ## install
 
