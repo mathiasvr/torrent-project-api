@@ -25,7 +25,6 @@ torrentProject.search = function (words, options, callback) {
   })
 }
 
-// hash / torrent
 torrentProject.trackers = function (torrent, callback) {
   apiRequest.meta(torrent, '/trackers_json', function (error, trackers) {
     return !error
@@ -34,7 +33,6 @@ torrentProject.trackers = function (torrent, callback) {
   })
 }
 
-// hash / torrent
 torrentProject.peers = function (torrent, callback) {
   apiRequest.meta(torrent, '/peers', function (error, peers) {
     return !error
@@ -43,7 +41,6 @@ torrentProject.peers = function (torrent, callback) {
   })
 }
 
-// torrent
 torrentProject.magnet = function (torrent, callback) {
   var link = 'magnet:?xt=urn:btih:' + torrent.hash + '&'
 
@@ -63,9 +60,9 @@ function _normalize (json, limit) {
 
   // convert object to array
   for (var i = 0; i < count; i++) {
-    // rename some keys
     result.torrents[i] = {}
     Object.keys(json[i + 1]).forEach(function (key) {
+      // rename some keys
       result.torrents[i][key.replace('torrent_', '')] = json[i + 1][key]
     })
   }

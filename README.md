@@ -21,7 +21,7 @@ tp.search('ubuntu', function (err, result) {
 
   tp.magnet(result.torrents[0], function (err, link) {
     if (err) return console.error(err)
-    console.log('Here is a magnet link it:')
+    console.log('Here is a magnet link for it:')
     console.log(link)
   })
 })
@@ -33,11 +33,11 @@ The `result` object looks like this:
 { total: 18427,
   torrents: [
     { title: 'ubuntu-14.04.3-desktop-amd64.iso',
-       category: 'ALL',
-       seeds: 3226,
-       leechs: 59,
-       size: 1054867456,
-       hash: '743bc6fad39e3a35460d31af5322c131dd196ac2' },
+      category: 'ALL',
+      seeds: 3226,
+      leechs: 59,
+      size: 1054867456,
+      hash: '743bc6fad39e3a35460d31af5322c131dd196ac2' },
     { ... }
   ]
 }
