@@ -4,7 +4,7 @@
   "description": "Torrent search API for torrentproject.se",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard && tape test/*.js"
   },
   "keywords": [
     "torrentproject",
@@ -19,7 +19,9 @@
     "lodash": "^3.10.1",
     "request": "^2.67.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "^4.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mathiasvr/torrent-project-api.git"

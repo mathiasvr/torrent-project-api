@@ -65,6 +65,7 @@ function _normalize (json, limit) {
       // rename some keys
       result.torrents[i][key.replace('torrent_', '')] = json[i + 1][key]
     })
+    result.torrents[i].category = result.torrents[i].category.toLowerCase()
   }
 
   return result
