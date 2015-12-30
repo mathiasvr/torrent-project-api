@@ -1,6 +1,6 @@
 {
   "name": "torrent-project-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Torrent search API for torrentproject.se",
   "main": "index.js",
   "scripts": {
