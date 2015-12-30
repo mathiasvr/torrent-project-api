@@ -1,4 +1,8 @@
-# Torrent Project API
+# Torrent Project API [![npm][npm-image]][npm-url]
+
+[npm-image]: https://img.shields.io/npm/v/torrent-project-api.svg
+[npm-url]: https://www.npmjs.com/package/torrent-project-api
+
 Torrent search API for [torrentproject.se](https://torrentproject.se)
 
 ## install
@@ -80,7 +84,7 @@ The returned magnet `link`:
 
 ### trackers
 
-Receive a list of tracker from `result.torrents[]` or `infohash`
+Receive a list of trackers from `result.torrents[]` or `infohash`
 
 ```js
 tp.trackers(torrent, function (err, trackers) { })

@@ -1,5 +1,5 @@
 var qs = require('querystring')
-var _ = require('./lib/lodash')
+var _ = require('lodash')
 var apiRequest = require('./lib/api-request')
 var parameters = require('./lib/parameters')
 
@@ -26,11 +26,7 @@ torrentProject.search = function (words, options, callback) {
 }
 
 torrentProject.trackers = function (torrent, callback) {
-  apiRequest.meta(torrent, '/trackers_json', function (error, trackers) {
-    return !error
-      ? callback(null, trackers)
-      : callback(error)
-  })
+  apiRequest.meta(torrent, '/trackers_json', callback)
 }
 
 torrentProject.peers = function (torrent, callback) {
@@ -51,7 +47,7 @@ torrentProject.magnet = function (torrent, callback) {
   })
 }
 
-// note: this function is based on many assumptions.
+// note: the json data is assumed to have a specific format.
 function _normalize (json, limit) {
   var result = { total: parseInt(json['total_found'], 10), torrents: [] }
 
