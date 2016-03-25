@@ -1,4 +1,3 @@
-// TODO: should maybe mock the requests
 var test = require('tape')
 var tp = require('../')
 
@@ -22,8 +21,9 @@ test('search with some options', function (t) {
     t.equals(result.torrents.length, options.limit, 'has correct limit')
     t.equals(result.torrents[1].category, options.filter, 'seems to filter correctly')
     t.ok(result.torrents[0].size >= result.torrents[1].size, 'seems to sort correctly')
-    for (var key in sampleTorrent)
+    for (var key in sampleTorrent) {
       t.ok(result.torrents[0].hasOwnProperty(key), 'has key: ' + key)
+    }
     t.end()
   })
 })
